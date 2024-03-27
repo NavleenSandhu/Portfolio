@@ -30,23 +30,13 @@
         })
     }
     const sendMailBtn = document.querySelector('#sendMail')
-    sendMailBtn.addEventListener('click', async () => {
-        await fetch('http://srv485884.hstgr.cloud:5200', {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "from": document.querySelector('.i-c-2 input[type="email"]').value,
-                "subject": document.querySelector("#subject").value,
-                "text": document.querySelector('.input-control textarea').value
-            })
-        })
-        const inputs = document.querySelectorAll('.input-control')
+    sendMailBtn.addEventListener('click', () => {
+        const inputs = document.querySelectorAll('input')
         for (let i in inputs) {
             if (i < inputs.length - 1) {
                 inputs[i].value = '';
             }
         }
+        document.querySelectorAll('textarea').value='';
     })
 })();
