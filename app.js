@@ -37,6 +37,6 @@
                 inputs[i].value = '';
             }
         }
-        document.querySelectorAll('textarea').value='';
+        document.querySelectorAll('textarea').value = '';
     })
 })();
